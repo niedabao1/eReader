@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    display: grid;   
+    grid-template-columns: 200px 200px 200px;
+}
+
+
+
+/*musicPlayBar*/
+.musicPlayBar {   
+    border: 1px solid brown;
+    position: fixed;
+    bottom: 0px;
+
+    background-color: blueviolet;
+    height: 70px;
+    width: 100%;
+    margin: 0px;
+    padding: 2px;
+}
+
+.musicPlayBar#musicPlayPrgBar {
+    border:0px;
+    position: relative;
+    top: 0px;
+
+    background-color: blue;
+    height: 10px;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.musicPlayBar#musicPlayStar {
+    border:0px;
+    position: relative;
+    top: 15px;
+
+    background-color: aquamarine;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+}
+
+
+/*mainpage*/
+
+
+#playSection{
+    border-radius: 1%;
+    
+    background-color: aqua;
+    height: 600px;
+    
+}
+#meuns{
+    border-radius: 1%;
+    
+    background-color: aqua;
+    
+}
