@@ -1,7 +1,6 @@
 body {
     margin: 0;
-    display: grid;   
-    grid-template-columns: 200px 200px 200px;
+    display: grid;
 }
 
 
@@ -47,15 +46,34 @@ body {
 
 
 #playSection{
-    border-radius: 1%;
+
+    display: grid;
     
-    background-color: aqua;
-    height: 600px;
+    background-color: rgb(255, 255, 255);
+    height: auto;
     
+    
+    grid-template-columns: repeat(12, minmax(0,1fr));
+    grid-gap: 15px;
+    grid-auto-rows: minmax(200px,700px);
+
 }
-#meuns{
+.mainPage#timePoint{
     border-radius: 1%;
-    
     background-color: aqua;
-    
+
+    grid-column: 1 / 4;
+    grid-row: 1;
 }
+.mainPage#blank{
+    grid-column: 4 / 6;
+    grid-row: 1;
+}
+
+.mainPage#meuns{
+    background-color: rgba(236, 227, 89, 0.411);
+
+    grid-column: 6 / 13;
+    grid-row: 1;
+}
+
