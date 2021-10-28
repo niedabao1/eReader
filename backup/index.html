@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./css/thecss.css">
+    <script src="https://unpkg.com/vue@3.0.0-beta.12/dist/vue.global.js"></script>
+    <title>Document</title>
+    
+
+</head>
+
+<body >
+
+<div id="uploadFileMain">
+    <button id="playAudio"> 上传文件 </button>
+    <input type="file" name="fileUpload" id="fileUpload" @change="funcLoadFile">
+    {{testValue}}
+</div>
+
+
+    
+<!--播放栏-->    
+<div class = "musicPlayBar" id = "musicPlayPrgBarMain"  @keyup.space="eventPlayVocSpace">
+    <div class = "musicPlayBar" id="musicPlayPrgBar"
+         @click="eventPlayPrgBarClick"><!--进度条-->
+        <div class="musicPlayBar" id="musicPlayPrgBarCover"
+            :style="{width:coverBarWidth + '%'}"></div><!--进度条运动部分-->
+    </div>
+
+    
+    <div class = "musicPlayBar" id="musicPlayStar" @click="eventPlayVocClick">
+        <p v-if="ifPlayPause"> {{buttonPlay}} </p>
+        <p v-else> {{buttonPause}} </p>
+    </div>
+    <div class = "musicPlayBar" id="musicPlayTime"> {{vocTime}} </div>
+    <audio :src="vocFileName" id = "idVoice" 
+    @canplay="eventGetVocDurning" @timeupdate="eventGetVocCurrentTime"
+    ></audio>
+</div>
+<!--***********************************************************************************************************-->
+</body>
+<!--reference part-->
+<script src="./js/theJs.js"></script>
+<!--mount part-->
+<script>
+    const mountedVoicePlayerBar = voicePlayerBar.mount('#musicPlayPrgBarMain');
+   const mountedUploadFile = uploadFile.mount('#uploadFileMain')
+    </script>
+    <script>
+        let varAudio = document.getElementById('idVoice'); //将此句放在 mount 前的话会导致无法播放.
+        let varPlayPrgBar = document.getElementById('musicPlayPrgBar');
+        let varUploadFile = document.getElementById('fileUpload');
+    </script>
+</html>
+<!--此部分搁浅,我需要重写.-->
